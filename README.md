@@ -1,4 +1,4 @@
-Lost And Found Portal
+Lost And Found Portal🎓
 
 A web-based Lost and Found Portal built using Node.js, Express, and MySQL.
 This system allows users to report lost or found items and submit claims in an organized and efficient manner.
@@ -83,6 +83,7 @@ claims – Stores item claim requests
 Database initialization scripts are included in the scripts/ folder.
 
 ⚙️ Installation & Setup
+
 1️⃣ Clone the Repository
 git clone https://github.com/your-username/lost-and-found-portal.git
 cd lost-and-found-portal
@@ -151,3 +152,4 @@ Backend Development Practice
 
 Lakshya
 Computer Science Engineering Student
+
