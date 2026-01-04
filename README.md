@@ -46,28 +46,35 @@ This project is developed as a **college-level web application**, focusing on **
 
 ## 📂 Project Structure
 
+
 Lost&Found/
 │
+
 ├── server.js
 ├── package.json
 │
+
 ├── config/
 │ └── database.js
 │
+
 ├── routes/
 │ ├── auth.js
 │ ├── simple-lostItems.js
 │ ├── simple-foundItems.js
 │ └── claims.js
 │
+
 ├── scripts/
 │ ├── init-database.js
 │ └── create-tables.js
 │
+
 ├── public/
 │ ├── index.html
 │ └── script.js
 │
+
 └── README.md
 
 yaml
@@ -130,6 +137,7 @@ Nupur Thapa – Frontend Development
 📜 License
 
 This project is licensed under the MIT License.
+
 
 
 
