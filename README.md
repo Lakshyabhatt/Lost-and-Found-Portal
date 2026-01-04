@@ -1,101 +1,103 @@
-Lost And Found Portal🎓
+# 🎓 Lost and Found Portal
 
-A web-based Lost and Found Portal built using Node.js, Express, and MySQL.
-This system allows users to report lost or found items and submit claims in an organized and efficient manner.
+A **web-based Lost and Found Portal** built using **Node.js, Express, and MySQL**.  
+This system enables users to report lost or found items and submit claims in an organized and efficient manner.
 
-📌 Project Overview
+---
 
-The Lost and Found Portal provides a centralized platform where:
+## 📌 Project Overview
 
-Users can register and log in
+The **Lost and Found Portal** provides a centralized digital platform where users can:
 
-Report lost items
+- 👤 Register and log in securely
+- 📄 Report **lost items**
+- 🔍 Report **found items**
+- 📨 Submit **claims** for items
+- 🔄 Manage item recovery digitally
 
-Report found items
+This project is developed as a **college-level web application**, focusing on **backend development**, **RESTful APIs**, and **database design**.
 
-Submit claims for items
+---
 
-Manage item recovery digitally
+## 🚀 Features
 
-This project is developed as a college-level web application, focusing on backend development and database design.
+- 👤 User Authentication (Register & Login)
+- 📄 Report Lost Items
+- 🔍 Report Found Items
+- 📨 Claim Lost / Found Items
+- 🗄️ MySQL Database Integration
+- 🔄 RESTful API Design
+- 📁 Clean & Modular Code Structure
 
-🚀 Features
+---
 
-👤 User Authentication (Register & Login)
+## 🛠️ Tech Stack
 
-📄 Report Lost Items
+| Technology | Purpose |
+|----------|--------|
+| Node.js | Server-side runtime |
+| Express.js | Backend framework |
+| MySQL | Relational database |
+| HTML | Frontend structure |
+| JavaScript | Client-side logic |
+| npm | Dependency management |
 
-🔍 Report Found Items
+---
 
-📨 Claim Lost / Found Items
+## 📂 Project Structure
 
-🗄️ MySQL Database Integration
-
-🔄 RESTful API Design
-
-📁 Clean & Modular Code Structure
-
-🛠️ Tech Stack
-Technology	Purpose
-Node.js	Server-side runtime
-Express.js	Backend framework
-MySQL	Relational database
-HTML	Frontend structure
-JavaScript	Client-side logic
-npm	Dependency management
-📂 Project Structure
 Lost&Found/
 │
 ├── server.js
 ├── package.json
 │
 ├── config/
-│   └── database.js
+│ └── database.js
 │
 ├── routes/
-│   ├── auth.js
-│   ├── simple-lostItems.js
-│   ├── simple-foundItems.js
-│   └── claims.js
+│ ├── auth.js
+│ ├── simple-lostItems.js
+│ ├── simple-foundItems.js
+│ └── claims.js
 │
 ├── scripts/
-│   ├── init-database.js
-│   └── create-tables.js
+│ ├── init-database.js
+│ └── create-tables.js
 │
 ├── public/
-│   ├── index.html
-│   └── script.js
+│ ├── index.html
+│ └── script.js
 │
 └── README.md
 
-🗄️ Database Design
+## 🗄️ Database Design
 
-Main tables used in the project:
+The project uses the following main tables:
 
-users – Stores user details
+- **users** – Stores user details  
+- **lost_items** – Stores lost item information  
+- **found_items** – Stores found item information  
+- **claims** – Stores item claim requests  
 
-lost_items – Stores lost item information
+Database initialization scripts are available in the `scripts/` folder.
 
-found_items – Stores found item information
+---
 
-claims – Stores item claim requests
+## ⚙️ Installation & Setup
 
-Database initialization scripts are included in the scripts/ folder.
-
-⚙️ Installation & Setup
-
-1️⃣ Clone the Repository
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/your-username/lost-and-found-portal.git
 cd lost-and-found-portal
 
 2️⃣ Install Dependencies
+
 npm install
 
 3️⃣ Configure Database
-
 Create a MySQL database
 
-Update credentials in config/database.js
+Update database credentials in config/database.js
 
 4️⃣ Initialize Database
 node scripts/init-database.js
@@ -104,52 +106,19 @@ node scripts/create-tables.js
 5️⃣ Run the Server
 node server.js
 
-
 📍 Server runs at:
-
 http://localhost:3000
 
-🧪 Sample API Endpoints
-Method	Endpoint	Description
-POST	/auth/register	Register a new user
-POST	/auth/login	User login
-POST	/lost	Add lost item
-POST	/found	Add found item
-POST	/claims	Claim an item
-🔒 Security Considerations
+👥 Project Team
 
-Password hashing (bcrypt) can be added
+Lakshya – Backend Developer
 
-JWT-based authentication can be implemented
+Arpit Uniyal – Team Member
 
-Environment variables (.env) recommended for credentials
+Anurag Singh – Team Member
 
-🌱 Future Enhancements
+Nupur Thapa – Team Member
 
-🔐 JWT Authentication
+📜 License
 
-🤖 AI-based matching of lost & found items
-
-📧 Email notifications
-
-🖼️ Image upload for items
-
-👮 Admin dashboard
-
-📱 Mobile app integration
-
-🎓 Academic Use
-
-This project is suitable for:
-
-DBMS Mini Project
-
-Web Technology Project
-
-Backend Development Practice
-
-👨‍💻 Author
-
-Lakshya
-Computer Science Engineering Student
-
+This project is licensed under the MIT License.
