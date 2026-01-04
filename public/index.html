@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost & Found Portal - College Campus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-search"></i>
+                <span>Lost & Found Portal</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#lost-items" class="nav-link" data-section="lost-items">Lost Items</a>
+                <a href="#found-items" class="nav-link" data-section="found-items">Found Items</a>
+                <div class="nav-auth" id="nav-auth">
+                    <button class="btn btn-outline" id="login-btn">Login</button>
+                    <button class="btn btn-primary" id="register-btn">Register</button>
+                </div>
+                <div class="nav-user" id="nav-user" style="display: none;">
+                    <span id="user-name"></span>
+                    <button class="btn btn-outline" id="logout-btn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Welcome to Lost & Found Portal</h1>
+                    <p>Find your lost items or help others find theirs on our college campus</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" data-section="lost-items">
+                            <i class="fas fa-plus"></i> Report Lost Item
+                        </button>
+                        <button class="btn btn-secondary btn-large" data-section="found-items">
+                            <i class="fas fa-hand-holding"></i> Report Found Item
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lost Items Section -->
+        <section id="lost-items" class="section">
+            <div class="section-header">
+                <h2>Lost Items</h2>
+                <button class="btn btn-primary" id="add-lost-item-btn">
+                    <i class="fas fa-plus"></i> Report Lost Item
+                </button>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="lost-search" placeholder="Search lost items by name, description, or location...">
+                </div>
+            </div>
+            
+            <div class="items-grid" id="lost-items-grid">
+                <!-- Lost items will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Found Items Section -->
+        <section id="found-items" class="section">
+            <div class="section-header">
+                <h2>Found Items</h2>
+                <button class="btn btn-primary" id="add-found-item-btn">
+                    <i class="fas fa-plus"></i> Report Found Item
+                </button>
+            </div>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="found-search" placeholder="Search found items by name, description, or location...">
+                </div>
+            </div>
+
+            <div id="finder-claims" style="display:none; margin-bottom: 16px;">
+                <h3 style="margin-bottom:8px;">Pending Claims For Your Found Items</h3>
+                <div class="items-grid" id="finder-claims-list"></div>
+            </div>
+
+            <div class="items-grid" id="found-items-grid">
+                <!-- Found items will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-student-id">Student ID</label>
+                    <input type="text" id="login-student-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Register</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-student-id">Student ID</label>
+                    <input type="text" id="register-student-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-phone">Phone Number</label>
+                    <input type="tel" id="register-phone">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lost Item Modal -->
+    <div id="lost-item-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Report Lost Item</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="lost-item-form">
+                <div class="form-group">
+                    <label for="lost-item-name">Item Name</label>
+                    <input type="text" id="lost-item-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lost-description">Description</label>
+                    <textarea id="lost-description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="lost-location">Location Lost</label>
+                    <input type="text" id="lost-location" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lost-date">Date Lost</label>
+                        <input type="date" id="lost-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lost-time">Time Lost</label>
+                        <input type="time" id="lost-time">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lost-category">Category</label>
+                    <select id="lost-category">
+                        <option value="">Select Category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Books">Books</option>
+                        <option value="Personal Items">Personal Items</option>
+                        <option value="Sports Equipment">Sports Equipment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="lost-image">Image (optional)</label>
+                    <input type="file" id="lost-image" accept="image/*">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Report Lost Item</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Found Item Modal -->
+    <div id="found-item-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Report Found Item</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="found-item-form">
+                <div class="form-group">
+                    <label for="found-item-name">Item Name</label>
+                    <input type="text" id="found-item-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="found-description">Description</label>
+                    <textarea id="found-description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="found-location">Location Found</label>
+                    <input type="text" id="found-location" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="found-date">Date Found</label>
+                        <input type="date" id="found-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="found-time">Time Found</label>
+                        <input type="time" id="found-time">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="found-category">Category</label>
+                    <select id="found-category">
+                        <option value="">Select Category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Books">Books</option>
+                        <option value="Personal Items">Personal Items</option>
+                        <option value="Sports Equipment">Sports Equipment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="found-image">Image (optional)</label>
+                    <input type="file" id="found-image" accept="image/*">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Report Found Item</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notify Owner Modal -->
+    <div id="notify-owner-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Notify Lost Item Owner</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="notify-owner-form">
+                <input type="hidden" id="notify-lost-id">
+                <div class="form-group">
+                    <label for="notify-found-select">Choose one of your found items</label>
+                    <select id="notify-found-select" required>
+                        <option value="">Select your found item</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Send Notification</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Verify Claim Modal -->
+    <div id="verify-claim-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Verify Item Details</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="verify-claim-form">
+                <input type="hidden" id="verify-found-id">
+                <div class="form-group">
+                    <label for="verify-location">Where did you lose it?</label>
+                    <input type="text" id="verify-location" placeholder="Location" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="verify-date">When did you lose it?</label>
+                        <input type="date" id="verify-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="verify-time">Approx. time (optional)</label>
+                        <input type="time" id="verify-time">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Submit Verification</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
