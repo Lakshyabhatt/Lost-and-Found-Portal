@@ -94,42 +94,39 @@ Database initialization scripts are available in the `scripts/` folder.
 ```bash
 git clone https://github.com/your-username/lost-and-found-portal.git
 cd lost-and-found-portal
+
 2️⃣ Install Dependencies
-bash
-Copy code
 npm install
+
 3️⃣ Configure Database
 Create a MySQL database
 
 Update database credentials in config/database.js
 
 4️⃣ Initialize Database
-bash
-Copy code
+
 node scripts/init-database.js
 node scripts/create-tables.js
-5️⃣ Run the Server
-bash
-Copy code
-node server.js
-📍 Server runs at:
 
-arduino
-Copy code
+5️⃣ Run the Server
+node server.js
+
+📍 Server runs at:
 http://localhost:3000 
 
-```bash
+```
 
 
 👥 Project Team
-Lakshya – Backend Developer
+Lakshya Bhatt– Database Design 
 
-Arpit Uniyal – Team Member
+Arpit Uniyal – Backend Development
 
-Anurag Singh – Team Member
+Anurag Singh – API Design & Services
 
-Nupur Thapa – Team Member
+Nupur Thapa – Frontend Development
 
 📜 License
 This project is licensed under the MIT License.
+
 
