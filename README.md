@@ -9,11 +9,11 @@ This system enables users to report lost or found items and submit claims in an 
 
 The **Lost and Found Portal** provides a centralized digital platform where users can:
 
-- 👤 Register and log in securely
-- 📄 Report **lost items**
-- 🔍 Report **found items**
-- 📨 Submit **claims** for items
-- 🔄 Manage item recovery digitally
+- 👤 Register and log in securely  
+- 📄 Report **lost items**  
+- 🔍 Report **found items**  
+- 📨 Submit **claims** for items  
+- 🔄 Manage item recovery digitally  
 
 This project is developed as a **college-level web application**, focusing on **backend development**, **RESTful APIs**, and **database design**.
 
@@ -21,13 +21,13 @@ This project is developed as a **college-level web application**, focusing on **
 
 ## 🚀 Features
 
-- 👤 User Authentication (Register & Login)
-- 📄 Report Lost Items
-- 🔍 Report Found Items
-- 📨 Claim Lost / Found Items
-- 🗄️ MySQL Database Integration
-- 🔄 RESTful API Design
-- 📁 Clean & Modular Code Structure
+- 👤 User Authentication (Register & Login)  
+- 📄 Report Lost Items  
+- 🔍 Report Found Items  
+- 📨 Claim Lost / Found Items  
+- 🗄️ MySQL Database Integration  
+- 🔄 RESTful API Design  
+- 📁 Clean & Modular Code Structure  
 
 ---
 
@@ -70,6 +70,11 @@ Lost&Found/
 │
 └── README.md
 
+yaml
+Copy code
+
+---
+
 ## 🗄️ Database Design
 
 The project uses the following main tables:
@@ -89,28 +94,30 @@ Database initialization scripts are available in the `scripts/` folder.
 ```bash
 git clone https://github.com/your-username/lost-and-found-portal.git
 cd lost-and-found-portal
-
 2️⃣ Install Dependencies
-
+bash
+Copy code
 npm install
-
 3️⃣ Configure Database
 Create a MySQL database
 
 Update database credentials in config/database.js
 
 4️⃣ Initialize Database
+bash
+Copy code
 node scripts/init-database.js
 node scripts/create-tables.js
-
 5️⃣ Run the Server
+bash
+Copy code
 node server.js
-
 📍 Server runs at:
+
+arduino
+Copy code
 http://localhost:3000
-
 👥 Project Team
-
 Lakshya – Backend Developer
 
 Arpit Uniyal – Team Member
@@ -120,5 +127,4 @@ Anurag Singh – Team Member
 Nupur Thapa – Team Member
 
 📜 License
-
 This project is licensed under the MIT License.
