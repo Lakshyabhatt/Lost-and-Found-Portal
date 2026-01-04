@@ -77,8 +77,6 @@ Lost&Found/
 
 └── README.md
 
-yaml
-Copy code
 
 ---
 
@@ -137,6 +135,7 @@ Nupur Thapa – Frontend Development
 📜 License
 
 This project is licensed under the MIT License.
+
 
 
 
