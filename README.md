@@ -118,6 +118,7 @@ http://localhost:3000
 
 
 👥 Project Team
+
 Lakshya Bhatt– Database Design 
 
 Arpit Uniyal – Backend Development
@@ -127,6 +128,8 @@ Anurag Singh – API Design & Services
 Nupur Thapa – Frontend Development
 
 📜 License
+
 This project is licensed under the MIT License.
+
 
 
